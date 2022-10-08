@@ -1,3 +1,39 @@
-p {
-  font-family: Lato;
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.users__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 500px;
+}
+
+.user__item {
+  margin-bottom: 0.5rem;
+}
+
+.users__title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.user__prop {
+  display: inline-block;
+  width: 20px;
+}
+
+.user__prop:not(:first-of-type):not(:last-of-type) {
+  min-width: 120px;
 }

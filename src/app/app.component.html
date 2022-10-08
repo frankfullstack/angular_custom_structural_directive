@@ -1,4 +1,26 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<section class="users__wrapper">
+  <div *ngIf="users; else loading">
+    <div class="users__title">Users</div>
+    <div
+      class="users__content"
+      *filterBy="
+        let result;
+        select: ['id', 'username', 'firstName', 'lastName', 'gender', 'age'];
+        from: users;
+        where: isMale
+      "
+    >
+      <div class="user__item">
+        <span class="user__prop user__id">{{ result.id }}</span>
+        <span class="user__prop user__username">{{ result.username }}</span>
+        <span class="user__prop user__first-name">{{ result.firstName }}</span>
+        <span class="user__prop user__last-name">{{ result.lastName }}</span>
+        <span class="user__prop user__age">{{ result.age }}</span>
+        <span class="user__prop user__gender">{{ result.gender }}</span>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+</section>

@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+import { FilterByDirective } from './directive/filter-by.directive';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, CommonModule, FormsModule],
+  declarations: [AppComponent, HelloComponent, FilterByDirective],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
